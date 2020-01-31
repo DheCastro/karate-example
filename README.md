@@ -6,7 +6,7 @@ Projeto de exemplo, utilizado para estudo de testes de serviços com o Karatê D
 * [API de Teste](#api-de-teste)
 * [Passo a passo](#passo-a-passo)
 
-##Setup
+## Setup
 
 1. Java 8+
 2. Maven 3.6.0
@@ -20,17 +20,17 @@ Projeto de exemplo, utilizado para estudo de testes de serviços com o Karatê D
 
 >Você deve realizar as configurações do Java e Maven na IDE que você irá utilizar (ex: IntelliJ, Eclipse, VsCode e etc)
 
-##Documentação
+## Documentação
 
 Vá para o Github do Karate DSL para encontrar a [documentação](https://github.com/intuit/karate).
  
-##API de Teste
+## API de Teste
 
 API usada para realizar os testes [site](https://swapi.co/api)
 
 > Você pode validar as chamadas e respostas no site e comparar com o resultado dos testes no Karate.
 
-##Passo a passo
+## Passo a passo
 
 1. Clone o projeto
 2. Abra o projeto no seu IDE, no terminal, execute os comandos abaixo para atualizar as dependências e executar o teste:
