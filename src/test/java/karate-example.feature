@@ -4,7 +4,7 @@ Background:
 
   * url "https://swapi.co/api"
 
-@dojo
+@json
 Scenario: Crie um teste de API que retorne todos os planetas do SW. Valide que TODO o retorno está de acordo com o esperado.
   Given path 'planets'
   When method get
@@ -12,7 +12,7 @@ Scenario: Crie um teste de API que retorne todos os planetas do SW. Valide que T
   * def json = read('planetas.json')
   And match json == response
 
-@dojo
+@response
 Scenario: Crie um teste que valide o modelo da StarShip 9.
   Given path 'starships/9'
   When method get
