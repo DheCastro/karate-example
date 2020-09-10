@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Karate.class)
 @CucumberOptions(
         features = "src/test/java/",
-        tags = {})
+        tags = {"@deleteUser"})
 public class KarateRunner {
 
 }
