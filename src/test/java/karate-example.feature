@@ -44,8 +44,8 @@ Feature: Cadastro de Pessoas
   @deleteUser
   Scenario Outline: Apagar um usuário
     Given path 'users/<id>'
-    When method get
-    Then status 200
+    When method delete
+    Then status 204
 
     Examples:
       | id  |
