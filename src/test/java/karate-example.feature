@@ -1,23 +1,52 @@
-Feature: Pessoas do StarWars
+Feature: Cadastro de Pessoas
 
-Background:
+  Background:
 
-  * url "https://swapi.co/api"
+    * url "http://course-javatest.herokuapp.com"
 
-@json
-Scenario: Crie um teste de API que retorne todos os planetas do SW. Valide que TODO o retorno está de acordo com o esperado.
-  Given path 'planets'
-  When method get
-  Then status 200
-  * def json = read('planetas.json')
-  And match json == response
+  @newUser
+  Scenario Outline: Cadastrar um novo usuário
+    Given path 'users'
+    And request query = read('<jsonFile>')
+    When method post
+    Then status 201
+    And match response.email == <email>
 
-@response
-Scenario: Crie um teste que valide o modelo da StarShip 9.
-  Given path 'starships/9'
-  When method get
-  Then status 200
-  * def starships = "DS-1 Orbital Battle Station"
-  And print starships
-  And print response.model
-  And match starships == response.model
+    Examples:
+      | jsonFile       | email               |
+      | newUser_1.json | 'email_1@email.com' |
+      | newUser_2.json | 'email_2@email.com' |
+
+  @getUser
+  Scenario Outline: Consultar um usuário
+    Given path 'users/<id>'
+    When method get
+    Then status 200
+    And match response.name == <name>
+
+    Examples:
+      | id  | name      |
+      | 165 | 'Fellipe' |
+
+  @updateUser
+  Scenario Outline: Alterar um usuário
+    Given path 'users/<id>'
+    And request query = read('<jsonFile>')
+    When method put
+    Then status 200
+    And match response.name == <name>
+    And match response.email == <email>
+
+    Examples:
+      | id  | jsonFile        | name        | email                     |
+      | 165 | updateUser.json | 'Fellipe M' | 'fellipe_email@email.com' |
+
+  @deleteUser
+  Scenario Outline: Apagar um usuário
+    Given path 'users/<id>'
+    When method get
+    Then status 200
+
+    Examples:
+      | id  |
+      | 165 |

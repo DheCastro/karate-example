@@ -3,6 +3,9 @@ import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Karate.class)
+@CucumberOptions(
+        features = "src/test/java/",
+        tags = {})
 public class KarateRunner {
 
 }
