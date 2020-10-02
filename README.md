@@ -26,7 +26,7 @@ Vá para o Github do Karate DSL para encontrar a [documentação](https://github
  
 ## API de Teste
 
-API usada para realizar os testes [site](https://swapi.co/api)
+API usada para realizar os testes [site](http://course-javatest.herokuapp.com)
 
 > Você pode validar as chamadas e respostas no site e comparar com o resultado dos testes no Karate.
 
@@ -49,5 +49,5 @@ Scenario: Crie um teste de API que retorne todos os planetas do SW. Valide que T
 ```
 Execute o comando abaixo:
 ```shell script
-mvn test -Dkarate.options="--tags @json" -Dtest=KarateRunner
+mvn test -Dkarate.options="--tags @getUser" -Dtest=KarateRunner
 ``` 
